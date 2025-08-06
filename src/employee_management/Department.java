@@ -1,5 +1,7 @@
 package employee_management;
 
+import java.util.Set;
+
 /**
  * TODO : a department is a collection of employees. It has a name and a set of employees in it.
  */
