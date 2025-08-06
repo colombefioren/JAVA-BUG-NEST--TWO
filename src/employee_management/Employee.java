@@ -41,4 +41,21 @@ public abstract class Employee {
                 ", Name='" + Name + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Employee employee = (Employee) o;
+
+        return EmployeeId == employee.EmployeeId &&
+                Name.equals(employee.Name);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(EmployeeId, Name, getClass());
+    }
+
 }
