@@ -18,4 +18,16 @@ public class Department {
     public Set<Employee> getEmployees () {
         return employees;
     }
+
+    public void AllEmployeeDetails(){
+        for(Employee e : employees){
+      System.out.println(e);
+      if(e instanceof PartTimeEmployee){
+        System.out.println("Hourly Rate : " + ((PartTimeEmployee) e).getHourlyRate());
+      }else if(e instanceof FullTimeEmployee){
+        System.out.println("Monthly Salary : " + ((FullTimeEmployee) e).getMonthlySalary());
+      }
+      System.out.println("======");
+        }
+    }
 }

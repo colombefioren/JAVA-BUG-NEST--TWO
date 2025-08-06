@@ -1,5 +1,7 @@
 package employee_management;
 
+import java.util.Set;
+
 public class TestCases {
     public static FullTimeEmployee fullTimeEmployeeKoto(){
         return new FullTimeEmployee(1, "Koto", 3_000_000);
@@ -9,20 +11,24 @@ public class TestCases {
         return new PartTimeEmployee(1, "Lita", 22, 11_750);
     }
 
-    public static void main(String[] args) {
-        FullTimeEmployee koto = TestCases.fullTimeEmployeeKoto();
-        PartTimeEmployee lita = TestCases.partTimeEmployeeLita();
+  public static void main(String[] args) {
+    FullTimeEmployee koto = TestCases.fullTimeEmployeeKoto();
+    PartTimeEmployee lita = TestCases.partTimeEmployeeLita();
 
-        // TODO : prevent the direct access here
-        koto.setMonthlySalary(6_000_000);
-        lita.setHoursWorked(1_000);
+    // TODO : prevent the direct access here
+    koto.setMonthlySalary(6_000_000);
+    lita.setHoursWorked(1_000);
 
-        // TODO : do not allow incoherent changes on salaries (applies to full time employees too)
-        lita.setHourlyRate(-10_000_000);
+    // TODO : do not allow incoherent changes on salaries (applies to full time employees too)
+    lita.setHourlyRate(-10_000_000);
 
-        // TODO : fix the string format of both full time and part time employees
-        // NOTE : do not show sensitive data such as hourlyRate or monthlySalary here !
-        System.out.println("Details about Koto " + koto);
-        System.out.println("Details about Lita " + lita);
+    // TODO : fix the string format of both full time and part time employees
+    // NOTE : do not show sensitive data such as hourlyRate or monthlySalary here !
+    System.out.println("Details about Koto " + koto);
+    System.out.println("Details about Lita " + lita);
+
+      Department department = new Department("IT", Set.of(koto, lita));
+      System.out.println("\n=== HR View ===");
+      department.AllEmployeeDetails();
     }
 }
