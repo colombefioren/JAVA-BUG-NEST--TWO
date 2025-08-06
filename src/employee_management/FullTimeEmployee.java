@@ -8,6 +8,11 @@ public class FullTimeEmployee extends Employee {
         this.monthlySalary = monthlySalary;
     }
 
+    public FullTimeEmployee(String name, double monthlySalary) {
+        super(name);
+        this.monthlySalary = monthlySalary;
+    }
+
     public double getMonthlySalary() {
         return monthlySalary;
     }

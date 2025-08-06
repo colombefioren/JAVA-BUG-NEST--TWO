@@ -3,10 +3,15 @@ package employee_management;
 public abstract class Employee {
     private int EmployeeId;
     private String Name;
+    private static int nextId = 1;
 
     public Employee(int employeeId, String name) {
         EmployeeId = employeeId;
         Name = name;
+    }
+
+    public Employee(String name) {
+        this(nextId++, name);
     }
 
     public int getEmployeeId() {
