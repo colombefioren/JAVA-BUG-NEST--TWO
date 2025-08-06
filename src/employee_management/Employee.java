@@ -26,4 +26,12 @@ public abstract class Employee {
     }
 
     public abstract double calculatePay();
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "EmployeeId=" + EmployeeId +
+                ", Name='" + Name + '\'' +
+                '}';
+    }
 }

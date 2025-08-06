@@ -19,5 +19,10 @@ public class FullTimeEmployee extends Employee {
     public double calculatePay() {
         return monthlySalary;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
 
