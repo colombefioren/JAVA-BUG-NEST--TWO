@@ -31,6 +31,10 @@ public class PartTimeEmployee extends Employee {
         return hoursWorked * hourlyRate;
     }
 
+    public double calculateTax() {
+        return calculatePay() * 0.15;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", hoursWorked=" + hoursWorked;
